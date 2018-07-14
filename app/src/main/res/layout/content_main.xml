@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="205dp"
+       android:background="#ee4e0560"
+       android:orientation="vertical">
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+
+       <TextView
+           android:id="@+id/date_id"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="10dp"
+           android:layout_marginTop="7dp"
+           android:text="This is date"
+           android:textSize="15sp"
+           android:textStyle="bold"
+           android:textColor="#ffffff"/>
+
+           <ImageView
+               android:layout_width="30dp"
+               android:layout_height="30dp"
+               android:src="@drawable/ic_data"
+               android:layout_alignParentEnd="true"
+               android:layout_marginEnd="10dp"
+               android:layout_marginTop="7dp"/>
+
+       </RelativeLayout>
+
+       <android.support.v7.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_height="150dp"
+           android:elevation="20dp"
+           app:cardBackgroundColor="#ee65047c"
+           android:layout_marginTop="10dp"
+           android:layout_marginStart="10dp"
+           android:layout_marginEnd="10dp"
+           app:cardCornerRadius="20dp">
+
+          <RelativeLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+
+              <ImageView
+                  android:id="@+id/purse_icon"
+                  android:layout_width="30dp"
+                  android:layout_height="30dp"
+                  android:src="@drawable/ic_open"
+                  android:layout_marginStart="5dp"
+                  android:layout_marginTop="15dp"/>
+
+              <TextView
+                  android:id="@+id/available_balance_text"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/purse_icon"
+                  android:text="Available Balance"
+                  android:layout_marginStart="5dp"
+                  android:layout_marginTop="9dp"
+                  android:textColor="#ffffff"
+                  android:textSize="20sp"/>
+
+              <TextView
+                  android:id="@+id/avail_balance"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/available_balance_text"
+                  android:text="N230,000"
+                  android:textColor="#ffffff"
+                  android:textSize="30sp"
+                  android:textStyle="bold"
+                  android:layout_marginTop="5dp"
+                  android:layout_marginStart="5dp"/>
+
+              <View
+                  android:id="@+id/line"
+                  android:layout_width="1dp"
+                  android:layout_height="match_parent"
+                  android:background="#e967b1"
+                  android:layout_centerInParent="true"/>
+
+              <TextView
+                  android:id="@+id/income_text"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Income = "
+                  android:layout_toRightOf="@id/line"
+                  android:layout_marginStart="10dp"
+                  android:layout_marginTop="9dp"
+                  android:textColor="#ffffff"
+                  android:textSize="20sp"/>
+
+              <TextView
+                  android:id="@+id/spent_text"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Spent = "
+                  android:layout_toRightOf="@id/line"
+                  android:layout_below="@id/income_text"
+                  android:layout_marginStart="10dp"
+                  android:layout_marginTop="57dp"
+                  android:textColor="#ffffff"
+                  android:textSize="20sp"/>
+
+              <TextView
+                  android:id="@+id/income"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="N78,000"
+                  android:layout_toRightOf="@id/income_text"
+                  android:layout_marginStart="5dp"
+                  android:layout_marginTop="9dp"
+                  android:textColor="#ffffff"
+                  android:textSize="20sp"/>
+
+              <TextView
+                  android:id="@+id/spent_amount"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="N15,000"
+                  android:layout_toRightOf="@id/spent_text"
+                  android:layout_marginStart="5dp"
+                  android:layout_below="@id/income_text"
+                  android:layout_marginTop="57dp"
+                  android:textColor="#ffffff"
+                  android:textSize="20sp"/>
+
+
+          </RelativeLayout>
+
+       </android.support.v7.widget.CardView>
+
+   </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latest Tranzactions"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#000000"/>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+</LinearLayout>
+
+

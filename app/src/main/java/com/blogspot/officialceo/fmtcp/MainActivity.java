@@ -1,6 +1,6 @@
 package com.blogspot.officialceo.fmtcp;
 
-import android.app.Dialog;
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -27,8 +27,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.blogspot.officialceo.fmtcp.Data.TranzactionsContract;
-import com.blogspot.officialceo.fmtcp.Data.TranzactionsDBHelper;
-import com.bumptech.glide.Glide;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
@@ -51,15 +49,15 @@ public class MainActivity extends AppCompatActivity
     private TextView amount, date;
     private Button billsButton;
     private EditText pMethod, fUsage, pAmount, tPin;
+    private Intent myIntent;
 
-    private TextView available;
-
-    public int availBal = 230000;
+    public TextView available, incomeAmount, expenseAmount;
 
     public Button dialogeCancel, dialogeProceed;
 
     private final static String LOG_TAG = MainActivity.class.getSimpleName();
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +82,17 @@ public class MainActivity extends AppCompatActivity
 
        // headImage = (ImageView) findViewById(R.id.head_pic);
         dateText = findViewById(R.id.date_id);
+
+        available = findViewById(R.id.avail_balance);
+        available.setText("N" + 350000);
+
+        incomeAmount = findViewById(R.id.income);
+        incomeAmount.setText("N" + 78000);
+
+        expenseAmount = findViewById(R.id.spent_amount);
+        expenseAmount.setText("N" + 15000);
+
+
 
         String currentDate = DateFormat.getDateInstance().format(new Date());
         dateText.setText(currentDate);
@@ -201,10 +210,19 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.about_app) {
+            Toast.makeText(this, "Info about the app is here", Toast.LENGTH_LONG).show();
+        } else if (id == R.id.group_members) {
+            Toast.makeText(this, "Group members info is here", Toast.LENGTH_LONG).show();
 
+        }else if (id == R.id.results){
+            myIntent = new Intent(MainActivity.this, ResultsActivity.class);
+            startActivity(myIntent);
+            Toast.makeText(this, "This is to check result", Toast.LENGTH_LONG).show();
+        }else if (id == R.id.nav_school_level){
+            Toast.makeText(this, "This is to check school dues", Toast.LENGTH_LONG).show();
+        }else if (id == R.id.nav_department_level){
+            Toast.makeText(this, "This is to check department dues", Toast.LENGTH_LONG).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginActivity"
+            android:name=".FirstActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,7 +20,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".BillsActivity"></activity>
+        <activity android:name=".BillsActivity" />
+        <activity android:name=".ResultsActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".ParentLoginActivity"></activity>
     </application>
 
 </manifest>

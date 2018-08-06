@@ -5,11 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class BillsActivity extends AppCompatActivity {
 
     private Button cancleButton, proceedButton;
+
+    private EditText amountTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,10 @@ public class BillsActivity extends AppCompatActivity {
         proceedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                amountTxt = findViewById(R.id.amount_edttxt);
+
+
                 Toast.makeText(BillsActivity.this, "Transaction action taken", Toast.LENGTH_SHORT).show();
             }
         });

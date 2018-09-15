@@ -22,12 +22,12 @@ public class FirstActivity extends Activity {
         loginAsStudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myIntent = new Intent(FirstActivity.this, LoginActivity.class);
+                myIntent = new Intent(FirstActivity.this, StudentLoginActivity.class);
                 startActivity(myIntent);
             }
         });
 
-        loginAsStudent.setOnClickListener(new View.OnClickListener() {
+        loginAsParent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(FirstActivity.this, "Item clicked", Toast.LENGTH_SHORT).show();
